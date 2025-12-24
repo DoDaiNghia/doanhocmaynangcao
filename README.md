@@ -1,23 +1,23 @@
-Đ# 📄 ĐỒ ÁN HỌC MÁY NÂNG CAO  
+Đ#  ĐỒ ÁN HỌC MÁY NÂNG CAO  
 ## Nhận diện ký tự văn bản tiếng Việt sử dụng VietOCR
 
 ---
 
-## 📌 Thông tin chung
+##  Thông tin chung
 - **Tên đề tài:** Nhận diện ký tự quang học (Optical Character Recognition – OCR) cho văn bản tiếng Việt  
 - **Môn học:** Học máy nâng cao  
 - **Giảng viên hướng dẫn:** Nguyễn Đình Quý  
 - **Lớp:** 67CS  
 - **Năm học:** 2025  
 
-### 👥 Nhóm thực hiện (Nhóm 11)
+###  Nhóm thực hiện (Nhóm 11)
 - Lê Đình Chính – 0169867  
 - **Đỗ Đại Nghĩa – 1500167**  
 - Nguyễn Xuân Hoàng  
 
 ---
 
-## 📖 1. Giới thiệu đề tài
+##  1. Giới thiệu đề tài
 Nhận diện ký tự quang học (OCR – Optical Character Recognition) là một bài toán quan trọng trong lĩnh vực **Thị giác máy tính**, cho phép máy tính trích xuất nội dung văn bản từ hình ảnh.  
 
 Với sự phát triển của **học sâu**, các mô hình OCR hiện đại đã đạt được độ chính xác cao, đặc biệt đối với các ngôn ngữ có dấu như **tiếng Việt**.  
@@ -26,7 +26,7 @@ Trong đồ án này, nhóm tập trung **nghiên cứu, huấn luyện và đá
 
 ---
 
-## 🎯 2. Mục tiêu
+##  2. Mục tiêu
 - Hiểu rõ kiến trúc và nguyên lý hoạt động của mô hình **VietOCR**
 - Huấn luyện mô hình OCR cho văn bản tiếng Việt
 - Tiền xử lý ảnh nhằm cải thiện độ chính xác nhận diện
@@ -35,7 +35,7 @@ Trong đồ án này, nhóm tập trung **nghiên cứu, huấn luyện và đá
 
 ---
 
-## 🧠 3. Cơ sở lý thuyết
+##  3. Cơ sở lý thuyết
 
 ### 3.1 VietOCR
 VietOCR là mô hình OCR mã nguồn mở, được thiết kế tối ưu cho tiếng Việt, dựa trên kiến trúc **Encoder – Decoder**.
@@ -45,7 +45,7 @@ VietOCR là mô hình OCR mã nguồn mở, được thiết kế tối ưu cho 
 - **Encoder:** Chuyển đặc trưng ảnh thành biểu diễn chuỗi
 - **Decoder (Seq2Seq):** Sinh chuỗi ký tự đầu ra
 
-👉 **Kiến trúc sử dụng trong đồ án:** `vgg_seq2seq`
+ **Kiến trúc sử dụng trong đồ án:** `vgg_seq2seq`
 
 ---
 
@@ -57,7 +57,7 @@ Trong đồ án này, **Tesseract không được dùng để nhận diện nộ
 
 ---
 
-## 🏗️ 4. Pipeline hệ thống
+##  4. Pipeline hệ thống
 
 
 Ảnh đầu vào
@@ -72,7 +72,7 @@ Ghép kết quả → Văn bản đầu ra
 
 ---
 
-## 📊 5. Dataset
+##  5. Dataset
 - Dữ liệu gồm các ảnh chứa **văn bản tiếng Việt**
 - Nguồn: sách, tài liệu in, chữ viết tay
 - Tổng số ảnh: **~4000 ảnh**
@@ -87,7 +87,7 @@ train/17.jpg|PHƯỜNG ĐÔNG XUYÊN, THÀNH PHỐ LONG XUYÊN, TỈNH AN GIANG
 
 ---
 
-## ⚙️ 6. Huấn luyện mô hình
+##  6. Huấn luyện mô hình
 
 ### Cấu hình chính
 - Kiến trúc: `vgg_seq2seq`
@@ -104,7 +104,7 @@ train/17.jpg|PHƯỜNG ĐÔNG XUYÊN, THÀNH PHỐ LONG XUYÊN, TỈNH AN GIANG
 
 ---
 
-## 🧪 7. Đánh giá mô hình
+##  7. Đánh giá mô hình
 
 **Chỉ số sử dụng:** CER (Character Error Rate)
 
@@ -113,11 +113,11 @@ train/17.jpg|PHƯỜNG ĐÔNG XUYÊN, THÀNH PHỐ LONG XUYÊN, TỈNH AN GIANG
 | Pre-trained | ~7.07% |
 | Fine-tuned  | ~6.59% |
 
-👉 Mô hình huấn luyện lại cho thấy **độ chính xác được cải thiện**, đặc biệt với các từ tiếng Việt có dấu và từ đặc thù.
+ Mô hình huấn luyện lại cho thấy **độ chính xác được cải thiện**, đặc biệt với các từ tiếng Việt có dấu và từ đặc thù.
 
 ---
 
-## 🖥️ 8. Triển khai (Inference)
+##  8. Triển khai (Inference)
 - Giao diện đơn giản sử dụng **Tkinter**
 - Thư viện: Pillow, pytesseract, VietOCR
 
@@ -130,14 +130,14 @@ train/17.jpg|PHƯỜNG ĐÔNG XUYÊN, THÀNH PHỐ LONG XUYÊN, TỈNH AN GIANG
 
 ---
 
-## ⚠️ 9. Hạn chế
+##  9. Hạn chế
 - Accuracy chuỗi đầy đủ chưa cao với ảnh dài
 - Phụ thuộc vào chất lượng tách dòng của Tesseract
 - Dataset chưa đa dạng hoàn toàn về font và nhiễu
 
 ---
 
-## 🚀 10. Hướng phát triển
+##  10. Hướng phát triển
 - Mở rộng dataset
 - Fine-tune thêm với Transformer
 - Áp dụng data augmentation
@@ -145,7 +145,7 @@ train/17.jpg|PHƯỜNG ĐÔNG XUYÊN, THÀNH PHỐ LONG XUYÊN, TỈNH AN GIANG
 
 ---
 
-## 📦 11. Lưu ý về repository
+##  11. Lưu ý về repository
 Do kích thước lớn, **dataset và model weight (.pth) không được đẩy đầy đủ lên GitHub**.
 
 Repo chủ yếu phục vụ:
